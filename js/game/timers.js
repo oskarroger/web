@@ -2,6 +2,9 @@
 import {gameTimeLimit, answerTimeLimit} from './cn-game.js';
 import {scoreBoardTotalTimeRemaining, scoreBoardAnswerTimer} from './score-board.js';
 
+// HTML element references
+const timeBarInner = document.getElementById('js-time-bar-inner');
+
 // Game timer variables
 let gameTime = 0;
 let gameTimeStart = 0;
@@ -58,4 +61,6 @@ export function answerTimer() {
     countDownTimer = Math.max(0, (answerTimeLimit - timerSeconds)).toFixed(1);
     // Render to score board area.
     scoreBoardAnswerTimer(countDownTimer);
+    // Handle Answer Timer stress bar
+    timeBarInner.style.width = 10 * countDownTimer + "%";
 }

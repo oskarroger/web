@@ -79,16 +79,12 @@ export function buttonClick(number) {
 
 // Handles correct answers.
 function correctAnswer() {
-    // Increment total and streak.
     correctTotal++;
     currentStreak++;
-    // Update best streak as needed.
     if (currentStreak > bestStreak) {
         bestStreak = currentStreak;
     }
-    // Trigger score keeping function.
     scoreCounter();
-    // Timer reset, and ask next question.
     clearInterval(timers.answerTimerID);
     timers.startTimeChanger(0);
     askQuestion();
@@ -96,7 +92,7 @@ function correctAnswer() {
 
 // Score keeping function.
 function scoreCounter() {
-    // First second full score grace period.
+    // First game time 1 second full score grace period.
     if (timers.countDownTimer > 9) {
         score = score + (baseScore * 10);
         // Planned future on screen speed encouragement.
