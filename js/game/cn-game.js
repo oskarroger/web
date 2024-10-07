@@ -5,6 +5,7 @@ import * as timers from './timers.js';
 import * as scoreBoard from './score-board.js';
 
 // Get HTML elements and create reference variables
+const mainGameContainer = document.getElementById('js-game');
 const questionContainerRef = document.getElementById('js-question');
 const timeBarContainerRef = document.getElementById('js-time-bar');
 const gameButtonsRef = document.getElementById('js-buttons');
@@ -14,6 +15,7 @@ const rightPanelRef = document.getElementById('js-right');
 let questionHTML = '';
 let questionNerve = '';
 let oldQuestionNerve = null;
+export let startCountDownTime = 5;
 export let correctTotal = 0;
 export let currentStreak = 0;
 export let bestStreak = 0;
@@ -26,7 +28,15 @@ const baseScore = 50;
 
 // Initialize!
 export function initGame() {
-    startGame();
+
+    mainGameContainer.innerHTML = `
+        <h1>Get ready!</h1>
+        <h1>${startCountDownTime}</h1>
+    `;
+    mainGameContainer.classList.toggle("alignt-items-center");
+
+
+    // startGame();
     timeBarContainerRef.classList.toggle("hidden");
     gameButtonsRef.classList.toggle("hidden");
     rightPanelRef.classList.toggle("hidden");

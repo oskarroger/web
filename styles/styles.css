@@ -8,6 +8,18 @@
     visibility: hidden;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
+.alignt-items-center {
+    align-items: center;
+}
+
+.justify-self-center {
+    justify-self: center;
+}
+
 body {
     background-color: black;
     height: 100vh;
@@ -39,6 +51,8 @@ footer {
 }
 
 .game-main-container {
+    display: flex;
+    flex-direction: column;
     width: 33vw;
 }
 
