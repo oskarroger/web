@@ -6,6 +6,7 @@ import * as scoreBoard from './score-board.js';
 
 // Get HTML elements and create variables
 const questionContainerRef = document.getElementById('js-question');
+const timeBarContainerRef = document.getElementById('js-time-bar');
 
 // Variable declarations
 let questionHTML = '';
@@ -32,6 +33,7 @@ function startGame() {
     gameButtons.renderGameButtons();
     scoreBoard.update();
     timers.gameTimer();
+    console.log(timeBarContainerRef);
 }
 
 // Function that takes the randomCn from cnData and processes it into a new question.
