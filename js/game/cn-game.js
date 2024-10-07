@@ -4,9 +4,11 @@ import * as gameButtons from './game-buttons.js';
 import * as timers from './timers.js';
 import * as scoreBoard from './score-board.js';
 
-// Get HTML elements and create variables
+// Get HTML elements and create reference variables
 const questionContainerRef = document.getElementById('js-question');
 const timeBarContainerRef = document.getElementById('js-time-bar');
+const gameButtonsRef = document.getElementById('js-buttons');
+const rightPanelRef = document.getElementById('js-right');
 
 // Variable declarations
 let questionHTML = '';
@@ -25,12 +27,18 @@ const baseScore = 50;
 // Initialize!
 export function initGame() {
     startGame();
+    timeBarContainerRef.classList.toggle("hidden");
+    gameButtonsRef.classList.toggle("hidden");
+    rightPanelRef.classList.toggle("hidden");
 }
 
 // Start the Game!
 function startGame() {
     askQuestion();
+    timeBarContainerRef.classList.toggle("hidden");
     gameButtons.renderGameButtons();
+    gameButtonsRef.classList.toggle("hidden");
+    rightPanelRef.classList.toggle("hidden");
     scoreBoard.update();
     timers.gameTimer();
     console.log(timeBarContainerRef);

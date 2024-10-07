@@ -4,6 +4,10 @@
     margin: 0px;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 body {
     background-color: black;
     height: 100vh;
