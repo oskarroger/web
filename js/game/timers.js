@@ -1,5 +1,5 @@
 // Imports
-import {gameTimeLimit, answerTimeLimit} from './cn-game.js';
+import {gameTimeLimit, answerTimeLimit, startCountDownTime} from './cn-game.js';
 import {scoreBoardTotalTimeRemaining, scoreBoardAnswerTimer} from './score-board.js';
 
 // HTML element references
@@ -18,6 +18,11 @@ let timeElapsed = 0;
 let timerSeconds = 0;
 let answerTimerID = 0;
 export let countDownTimer = 0;
+
+// Start count down variables
+let startTimeReturn = startCountDownTime;
+let startCountDownTimeStart = 0;
+let startCountDownTimeElapsed = 0;
 
 // Function to change startTime variable from outside if neccessary.
 export function startTimeChanger(newValue) {
@@ -63,4 +68,10 @@ export function answerTimer() {
     scoreBoardAnswerTimer(countDownTimer);
     // Handle Answer Timer stress bar
     timeBarInner.style.width = 10 * countDownTimer + "%";
+}
+
+// Starting count down function
+
+export function startCountDownTimer() {
+    startTimeReturn = startCountDownTime - 
 }
