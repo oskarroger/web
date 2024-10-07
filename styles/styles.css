@@ -55,6 +55,7 @@ footer {
 
 .game-right-container {
     font-size: 0.75rem;
+    align-self: flex-start;
 }
 
 .game-button {
